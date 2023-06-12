@@ -72,11 +72,31 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 4 )
 
-[node name="health" type="Label" parent="CanvasLayer/HUD"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 64.0
-margin_bottom = 32.0
+[node name="container" type="VBoxContainer" parent="CanvasLayer/HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MouseControl" type="Button" parent="CanvasLayer/HUD/container"]
+margin_right = 109.0
+margin_bottom = 20.0
+text = "Mouse Input"
+
+[node name="KeyboardControl" type="Button" parent="CanvasLayer/HUD/container"]
+margin_top = 24.0
+margin_right = 109.0
+margin_bottom = 44.0
+text = "Keyboard Input"
+
+[node name="TapControl" type="Button" parent="CanvasLayer/HUD/container"]
+margin_top = 48.0
+margin_right = 109.0
+margin_bottom = 68.0
+text = "Tap Input"
+
+[node name="health" type="Label" parent="CanvasLayer/HUD/container"]
+margin_top = 72.0
+margin_right = 109.0
+margin_bottom = 86.0
 size_flags_vertical = 0
 text = "0000"
 
@@ -96,3 +116,6 @@ region_filter_clip = true
 [connection signal="body_exited" from="level1/obstacles/healZone" to="level1/obstacles/healZone" method="_on_zone_body_exit"]
 [connection signal="health_change" from="player" to="CanvasLayer/HUD" method="_on_health_change"]
 [connection signal="im_dead" from="player" to="CanvasLayer/HUD" method="_on_player_im_dead"]
+[connection signal="pressed" from="CanvasLayer/HUD/container/MouseControl" to="player" method="_on_button_pressed" binds= [ "MouseControl" ]]
+[connection signal="pressed" from="CanvasLayer/HUD/container/KeyboardControl" to="player" method="_on_button_pressed" binds= [ "KeyboardControl" ]]
+[connection signal="pressed" from="CanvasLayer/HUD/container/TapControl" to="player" method="_on_button_pressed" binds= [ "TapControl" ]]

@@ -60,10 +60,6 @@ config/name="MarlowHaspert Actividad 3"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Inputmanager="*res://input/inputmanager.gd"
-
 [display]
 
 window/stretch/mode="2d"

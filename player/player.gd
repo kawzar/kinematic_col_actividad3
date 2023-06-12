@@ -26,3 +26,7 @@ func hurt(amount):
 	elif health > 100:
 		health = 100
 	emit_signal("health_change",health)
+
+
+func _on_button_pressed(button_name):
+	get_node("StateMachine").transition_to(button_name)

@@ -12,13 +12,12 @@ var target = Vector2(0,0)
 func enter(_msg := {}) -> void:
 	pass
 	
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	if isHeadedSomewhere:
 		if player.global_position.distance_to(target) > MIN_MOUSE_DISTANCE:
 			player.move_and_slide(velocity)
 		else:
 			isHeadedSomewhere = false
-			player.velocity = Vector2.ZERO
 	
 func handle_input(event: InputEvent) -> void:
    # Mouse in viewport coordinates.

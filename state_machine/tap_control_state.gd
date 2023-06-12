@@ -12,7 +12,7 @@ var target = Vector2(0,0)
 func enter(_msg := {}) -> void:
 	pass
 	
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	if isHeadedSomewhere:
 		if player.global_position.distance_to(target) > MIN_TARGET_DISTANCE:
 			player.move_and_slide(velocity)

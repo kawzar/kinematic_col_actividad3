@@ -13,5 +13,5 @@ func _on_zone_body_enter( body ):
 	if body.is_in_group("player"):
 		trapped_body = body
 
-func _on_zone_body_exit( body ):
+func _on_zone_body_exit(_body):
 	trapped_body = null
